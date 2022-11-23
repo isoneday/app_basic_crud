@@ -21,4 +21,18 @@ class KominfoNetwork {
       return null!;
     }
   }
+
+  Future<AuthenticationModel> prosesLogin(
+    String? email,
+    String? password,
+  ) async {
+    final response = await http.post(Uri.parse(Login));
+    if (response.statusCode == 200) {
+      AuthenticationModel responseModel =
+          AuthenticationModel.fromJson(jsonDecode(response.body));
+      return responseModel;
+    } else {
+      return null!;
+    }
+  }
 }

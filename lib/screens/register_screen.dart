@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/network/kominfo_network.dart';
 import 'package:oktoast/oktoast.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -10,7 +11,11 @@ class RegisterScreen extends StatefulWidget {
 
 class _RegisterScreenState extends State<RegisterScreen> {
   final formKey = GlobalKey<FormState>();
-
+  TextEditingController nameController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  TextEditingController phoneController = TextEditingController();
+  KominfoNetwork kominfoNetwork = KominfoNetwork();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,6 +47,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   child: Column(
                     children: [
                       TextFormField(
+                        controller: emailController,
                         validator: validasiEmail,
                         keyboardType: TextInputType.emailAddress,
                         decoration: InputDecoration(
@@ -62,6 +68,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       Padding(
                         padding: const EdgeInsets.only(top: 10),
                         child: TextFormField(
+                          controller: passwordController,
                           validator: validasiPassword,
                           keyboardType: TextInputType.number,
                           decoration: InputDecoration(
@@ -80,6 +87,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       Padding(
                         padding: const EdgeInsets.only(top: 10),
                         child: TextFormField(
+                          controller: nameController,
                           validator: validasiFullName,
                           keyboardType: TextInputType.text,
                           decoration: InputDecoration(
@@ -98,6 +106,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       Padding(
                         padding: const EdgeInsets.only(top: 10, bottom: 20),
                         child: TextFormField(
+                          controller: phoneController,
                           validator: validasiPhone,
                           keyboardType: TextInputType.phone,
                           decoration: InputDecoration(
@@ -176,6 +185,20 @@ class _RegisterScreenState extends State<RegisterScreen> {
         radius: 13.0,
         textStyle: const TextStyle(fontSize: 18.0),
       );
+      kominfoNetwork
+          .prosesRegister(
+            nameController.text,
+            emailController.text,
+            passwordController.text,
+            phoneController.text,
+          )
+          .then((response) {
+            if (response.sukses==true) {
+              
+            }else{
+
+            }
+          });
     }
   }
 }
