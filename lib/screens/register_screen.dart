@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/network/kominfo_network.dart';
+import 'package:flutter_app/screens/login_screen.dart';
 import 'package:oktoast/oktoast.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -16,6 +17,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
   TextEditingController passwordController = TextEditingController();
   TextEditingController phoneController = TextEditingController();
   KominfoNetwork kominfoNetwork = KominfoNetwork();
+  bool loading = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -135,7 +138,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               cekValidasi();
                             },
                             child: Text("Register")),
-                      )
+                      ),
+                      loading == true
+                          ? const Center(child: CircularProgressIndicator())
+                          : Container()
                     ],
                   )),
             )
@@ -178,27 +184,44 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   void cekValidasi() {
     if (formKey.currentState!.validate()) {
-      showToast(
-        'register berhasil',
-        position: ToastPosition.bottom,
-        backgroundColor: Colors.black.withOpacity(0.8),
-        radius: 13.0,
-        textStyle: const TextStyle(fontSize: 18.0),
-      );
+      setState(() {
+        loading = true;
+      });
       kominfoNetwork
           .prosesRegister(
-            nameController.text,
-            emailController.text,
-            passwordController.text,
-            phoneController.text,
-          )
+        nameController.text,
+        emailController.text,
+        passwordController.text,
+        phoneController.text,
+      )
           .then((response) {
-            if (response.sukses==true) {
-              
-            }else{
-
-            }
+        if (response.sukses == true) {
+          setState(() {
+            loading = false;
           });
+          showToast(
+            response.pesan!,
+            position: ToastPosition.bottom,
+            backgroundColor: Colors.black.withOpacity(0.8),
+            radius: 13.0,
+            textStyle: const TextStyle(fontSize: 18.0),
+          );
+          //untuk perpindahan halaman
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => LoginScreen()));
+        } else {
+          setState(() {
+            loading = false;
+          });
+          showToast(
+            response.pesan!,
+            position: ToastPosition.bottom,
+            backgroundColor: Colors.black.withOpacity(0.8),
+            radius: 13.0,
+            textStyle: const TextStyle(fontSize: 18.0),
+          );
+        }
+      });
     }
   }
 }

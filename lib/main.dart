@@ -17,8 +17,8 @@ class MyApp extends StatelessWidget {
       textStyle: const TextStyle(fontSize: 19.0, color: Colors.white),
       backgroundColor: Colors.grey,
       animationCurve: Curves.easeIn,
-      animationDuration: const Duration(milliseconds: 200),
-      duration: const Duration(milliseconds: 500),
+      animationDuration: const Duration(milliseconds: 500),
+      duration: const Duration(milliseconds: 2000),
       child: MaterialApp(
         title: 'Flutter Demo',
         home: SplashScreen(),

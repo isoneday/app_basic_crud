@@ -12,7 +12,12 @@ class KominfoNetwork {
     String? password,
     String? phone,
   ) async {
-    final response = await http.post(Uri.parse(Register));
+    final response = await http.post(Uri.parse(Register), body: {
+      "email": email,
+      "password": password,
+      "name": name,
+      "hp": phone,
+    });
     if (response.statusCode == 200) {
       AuthenticationModel responseModel =
           AuthenticationModel.fromJson(jsonDecode(response.body));
