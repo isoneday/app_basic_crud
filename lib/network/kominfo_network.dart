@@ -47,12 +47,16 @@ class KominfoNetwork {
   }
 
 //endpoint getlistbarang
-  Future<ModelListBarang> getListBarang() async {
-    final response = await http.post(Uri.parse(GetListBarang));
+  Future<List<Barang>?> getListBarang() async {
+    final response = await http.get(Uri.parse(GetListBarang));
+    List<Barang>? listBarang = [];
     if (response.statusCode == 200) {
       ModelListBarang responseModel =
           ModelListBarang.fromJson(jsonDecode(response.body));
-      return responseModel;
+      responseModel.barang?.forEach((element) {
+        listBarang.add(element);
+      });
+      return listBarang;
     } else {
       return null!;
     }

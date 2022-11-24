@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/network/kominfo_network.dart';
 import 'package:flutter_app/screens/login_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../model/model_listbarang.dart';
+import '../widgets/gridbarang.dart';
+
 class BarangScreen extends StatelessWidget {
-  const BarangScreen({super.key});
+  BarangScreen({super.key});
+  KominfoNetwork kominfoNetwork = KominfoNetwork();
+  List<Barang>? barang;
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +48,17 @@ class BarangScreen extends StatelessWidget {
                 icon: Icon(Icons.close)),
           ],
         ),
-        // body: ,
+        body: FutureBuilder(
+          future: getData(),
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return Center(
+                child: CircularProgressIndicator(),
+              );
+            }
+            return GridBarang(barangTerima: barang);
+          },
+        ),
       ),
     );
   }
@@ -70,5 +86,10 @@ class BarangScreen extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  Future<List<Barang>?> getData() async {
+    barang = await kominfoNetwork.getListBarang();
+    return barang;
   }
 }
