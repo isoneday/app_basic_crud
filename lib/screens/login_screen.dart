@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/screens/home_screen.dart';
 import 'package:flutter_app/screens/register_screen.dart';
 import 'package:oktoast/oktoast.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../network/kominfo_network.dart';
 
@@ -163,7 +164,7 @@ class _LoginScreenState extends State<LoginScreen> {
         emailController.text,
         passwordController.text,
       )
-          .then((response) {
+          .then((response) async {
         if (response.sukses == true) {
           setState(() {
             loading = false;
@@ -175,8 +176,10 @@ class _LoginScreenState extends State<LoginScreen> {
             radius: 13.0,
             textStyle: const TextStyle(fontSize: 18.0),
           );
+          SharedPreferences preferences = await SharedPreferences.getInstance();
+          preferences.setBool("sesi", true);
           //untuk perpindahan halaman
-          Navigator.push(
+          Navigator.pushReplacement(
               context, MaterialPageRoute(builder: (context) => HomeScreen()));
         } else {
           setState(() {
