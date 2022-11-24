@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter_app/model/authentication_model.dart';
+import 'package:flutter_app/model/model_listbarang.dart';
 import 'package:http/http.dart' as http;
 
 import '../util/constants.dart';
@@ -27,6 +28,7 @@ class KominfoNetwork {
     }
   }
 
+//endpoint login
   Future<AuthenticationModel> prosesLogin(
     String? email,
     String? password,
@@ -38,6 +40,18 @@ class KominfoNetwork {
     if (response.statusCode == 200) {
       AuthenticationModel responseModel =
           AuthenticationModel.fromJson(jsonDecode(response.body));
+      return responseModel;
+    } else {
+      return null!;
+    }
+  }
+
+//endpoint getlistbarang
+  Future<ModelListBarang> getListBarang() async {
+    final response = await http.post(Uri.parse(GetListBarang));
+    if (response.statusCode == 200) {
+      ModelListBarang responseModel =
+          ModelListBarang.fromJson(jsonDecode(response.body));
       return responseModel;
     } else {
       return null!;

@@ -1,4 +1,5 @@
 const String BaseURL = "https://udakita.com/";
-const String Register =
-    "${BaseURL}server_inventory-master/index.php/api/register";
-const String Login = "${BaseURL}server_inventory-master/index.php/api/login";
+const String BaseFolder = "{$BaseURL}server_inventory-master/index.php/api/";
+const String Register = "{$BaseURL}register";
+const String Login = "{$BaseURL}login";
+const String GetListBarang = "{$BaseURL}getBarang";
