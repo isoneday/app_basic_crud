@@ -31,7 +31,10 @@ class KominfoNetwork {
     String? email,
     String? password,
   ) async {
-    final response = await http.post(Uri.parse(Login));
+    final response = await http.post(Uri.parse(Login), body: {
+      "email": email,
+      "password": password,
+    },headers: {});
     if (response.statusCode == 200) {
       AuthenticationModel responseModel =
           AuthenticationModel.fromJson(jsonDecode(response.body));

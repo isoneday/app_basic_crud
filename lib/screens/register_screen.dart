@@ -141,7 +141,18 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       ),
                       loading == true
                           ? const Center(child: CircularProgressIndicator())
-                          : Container()
+                          : Container(),
+                      Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: GestureDetector(
+                            onTap: (() {
+                              Navigator.pop(context);
+                            }),
+                            child: Text(
+                              "Login",
+                              style: TextStyle(fontSize: 20),
+                            )),
+                      )
                     ],
                   )),
             )
