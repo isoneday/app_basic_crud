@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/screens/barang_screen.dart';
 import 'package:flutter_app/screens/home_screen.dart';
 import 'package:flutter_app/screens/register_screen.dart';
 import 'package:oktoast/oktoast.dart';
@@ -180,7 +181,7 @@ class _LoginScreenState extends State<LoginScreen> {
           preferences.setBool("sesi", true);
           //untuk perpindahan halaman
           Navigator.pushReplacement(
-              context, MaterialPageRoute(builder: (context) => HomeScreen()));
+              context, MaterialPageRoute(builder: (context) => BarangScreen()));
         } else {
           setState(() {
             loading = false;

@@ -4,31 +4,32 @@ import 'package:oktoast/oktoast.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
-
-Future<bool> _onWillPop(context) async {
-    return (await showDialog(
-      context: context,
-      builder: (context) => new AlertDialog(
-        title: new Text('Are you sure?'),
-        content: new Text('Do you want to exit an App'),
-        actions: <Widget>[
-          TextButton(
-            onPressed: () => Navigator.of(context).pop(false),
-            child: new Text('No'),
-          ),
-          TextButton(
-            onPressed: () => Navigator.of(context).pop(true),
-            child: new Text('Yes'),
-          ),
-        ],
-      ),
-    )) ?? false;
-  }
-
+ 
   @override
   Widget build(BuildContext context) {
+    Future<bool> _onWillPop() async {
+      return await showDialog(
+        context: context,
+        builder: (context) => new AlertDialog(
+          title: new Text('Are you sure?'),
+          content: new Text('Do you want to exit an App'),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(false),
+              child: new Text('No'),
+            ),
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(true),
+              child: new Text('Yes'),
+            ),
+          ],
+        ),
+      );
+    }
+   
+
     return WillPopScope(
-      onWillPop: ,
+      onWillPop: _onWillPop,
       child: Scaffold(
         appBar: AppBar(
           title: Text('Home'),
