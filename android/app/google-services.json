@@ -1,0 +1,272 @@
+{
+  "project_info": {
+    "project_number": "961878020814",
+    "firebase_url": "https://flutter-fe1d1.firebaseio.com",
+    "project_id": "flutter-fe1d1",
+    "storage_bucket": "flutter-fe1d1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:961878020814:android:17b5d01c23d4cdbb",
+        "android_client_info": {
+          "package_name": "com.company.recipes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "961878020814-ces8jmi9n6njhutav6haivpvm4s9l6ma.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.company.recipes",
+            "certificate_hash": "5c6fc12c1fc3e1913ce33a2bd2634d953f5d6f72"
+          }
+        },
+        {
+          "client_id": "961878020814-97smjnsffo8v716043i9u6pp7agebuns.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD34gdH_-DOyqiMo2Jm1wYBMTZB-TIoiJ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "961878020814-97smjnsffo8v716043i9u6pp7agebuns.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "961878020814-2ull0ot660hg350ifb1g5eo21d12jvbo.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.inatechno.aplikasiflutterbasic"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:961878020814:android:f5ae7fa27a7cc564ecf69f",
+        "android_client_info": {
+          "package_name": "com.imastudio.aplikasi_flutter_basic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "961878020814-97smjnsffo8v716043i9u6pp7agebuns.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD34gdH_-DOyqiMo2Jm1wYBMTZB-TIoiJ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "961878020814-97smjnsffo8v716043i9u6pp7agebuns.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "961878020814-2ull0ot660hg350ifb1g5eo21d12jvbo.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.inatechno.aplikasiflutterbasic"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:961878020814:android:31a8d7f2216840b7ecf69f",
+        "android_client_info": {
+          "package_name": "com.inatechno.aplikasi_flutter_basic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "961878020814-97smjnsffo8v716043i9u6pp7agebuns.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD34gdH_-DOyqiMo2Jm1wYBMTZB-TIoiJ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "961878020814-97smjnsffo8v716043i9u6pp7agebuns.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "961878020814-2ull0ot660hg350ifb1g5eo21d12jvbo.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.inatechno.aplikasiflutterbasic"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:961878020814:android:a33ed59af74ede99ecf69f",
+        "android_client_info": {
+          "package_name": "com.inatechno.dapatin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "961878020814-97smjnsffo8v716043i9u6pp7agebuns.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD34gdH_-DOyqiMo2Jm1wYBMTZB-TIoiJ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "961878020814-97smjnsffo8v716043i9u6pp7agebuns.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "961878020814-2ull0ot660hg350ifb1g5eo21d12jvbo.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.inatechno.aplikasiflutterbasic"
+              }
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-4180249928127114~9090276016"
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:961878020814:android:141d2e3eecafc437ecf69f",
+        "android_client_info": {
+          "package_name": "com.inatechno.flutter_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "961878020814-97smjnsffo8v716043i9u6pp7agebuns.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD34gdH_-DOyqiMo2Jm1wYBMTZB-TIoiJ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "961878020814-97smjnsffo8v716043i9u6pp7agebuns.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "961878020814-2ull0ot660hg350ifb1g5eo21d12jvbo.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.inatechno.aplikasiflutterbasic"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:961878020814:android:610aff00b490734cecf69f",
+        "android_client_info": {
+          "package_name": "com.kominfojambi.flutter_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "961878020814-97smjnsffo8v716043i9u6pp7agebuns.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD34gdH_-DOyqiMo2Jm1wYBMTZB-TIoiJ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "961878020814-97smjnsffo8v716043i9u6pp7agebuns.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "961878020814-2ull0ot660hg350ifb1g5eo21d12jvbo.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.inatechno.aplikasiflutterbasic"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:961878020814:android:88ac26f3193f3e4b",
+        "android_client_info": {
+          "package_name": "com.udakita.flutter_bahan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "961878020814-97smjnsffo8v716043i9u6pp7agebuns.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD34gdH_-DOyqiMo2Jm1wYBMTZB-TIoiJ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "961878020814-97smjnsffo8v716043i9u6pp7agebuns.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "961878020814-2ull0ot660hg350ifb1g5eo21d12jvbo.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.inatechno.aplikasiflutterbasic"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -64,14 +64,14 @@ class ModelListBarang with ChangeNotifier {
   }
 
   //delete barang
-  // Future<ModelListBarang> deleteBarang(id) async {
-  //   final response = await network.deleteBarang(id);
-  //   _responseRequest = response;
-  //   barang?.removeWhere((element) => element.barangId == id);
+  Future<ModelListBarang> deleteBarang(id) async {
+    final response = await network.deleteBarang(id);
+    _responseRequest = response;
+    barang?.removeWhere((element) => element.barangId == id);
 
-  //   notifyListeners();
-  //   return response;
-  // }
+    notifyListeners();
+    return response;
+  }
 
   //update product
   Future updateProductProvider(id, nama, harga, url, detail) async {
@@ -90,23 +90,23 @@ class ModelListBarang with ChangeNotifier {
     return response;
   }
 
-  // Future<ModelListBarang> updateProductTanpagmbar(
-  //     id, nama, harga, gambar, detail) async {
-  //   final response =
-  //       await network.updateBarangTanpaGambar(id, nama, harga, gambar, detail);
-  //   _responseRequest = response;
+  Future<ModelListBarang> updateProductTanpagmbar(
+      id, nama, harga, gambar, detail) async {
+    final response =
+        await network.updateBarangTanpaGambar(id, nama, harga, gambar, detail);
+    _responseRequest = response;
 
-  //   var index = listBarang?.indexWhere((element) => element.barangId == id);
+    var index = listBarang?.indexWhere((element) => element.barangId == id);
 
-  //   listBarang?[index!] = Barang(
-  //       barangId: id,
-  //       barangNama: nama,
-  //       barangHarga: harga,
-  //       barangGambar: gambar,
-  //       barangDetail: detail);
-  //   notifyListeners();
-  //   return response;
-  // }
+    listBarang?[index!] = Barang(
+        barangId: id,
+        barangNama: nama,
+        barangHarga: harga,
+        barangGambar: gambar,
+        barangDetail: detail);
+    notifyListeners();
+    return response;
+  }
 
   // search product
   List<Barang>? _listProductSearch;

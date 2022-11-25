@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/model/model_listbarang.dart';
 import 'package:flutter_app/util/constants.dart';
@@ -19,11 +20,14 @@ class ItemBarang extends StatelessWidget {
       child: ClipRRect(
           borderRadius: BorderRadius.circular(10),
           child: GridTile(
-            child: Image.network(
-              Gambar + product.barangGambar!,
-              width: double.infinity,
-              height: double.infinity,
-              fit: BoxFit.cover,
+            child: CachedNetworkImage(
+              imageUrl: Gambar + product!.barangGambar!,
+              placeholder: (context, url) => new CircularProgressIndicator(),
+              errorWidget: (context, url, error) => new Image.network(
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png",
+                width: double.infinity,
+                fit: BoxFit.fill,
+              ),
             ),
             footer: GridTileBar(
               backgroundColor: Colors.blue.shade200,

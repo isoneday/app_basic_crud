@@ -242,27 +242,27 @@ class _AddUpdateScreenState extends State<AddUpdateScreen> {
           print(res);
         });
       } else if (widget.edit == true && _image == null) {
-        // await listBarang
-        //     .updateProductTanpagmbar(_idBarang, _nmBarang?.text,
-        //         _hrgBarang?.text, _gmbrBarang?.text, _detBarang?.text)
-        //     .then((value) {
-        //   final scaffold = ScaffoldMessenger.of(context);
+        await listBarang
+            .updateProductTanpagmbar(_idBarang, _nmBarang?.text,
+                _hrgBarang?.text, _gmbrBarang?.text, _detBarang?.text)
+            .then((value) {
+          final scaffold = ScaffoldMessenger.of(context);
 
-        //   if (value.sukses!) {
-        //     Navigator.pop(context);
-        //     scaffold.showSnackBar(
-        //       SnackBar(
-        //         content: Text(value.pesan!),
-        //       ),
-        //     );
-        //   } else {
-        //     scaffold.showSnackBar(
-        //       SnackBar(
-        //         content: Text(value.pesan!),
-        //       ),
-        //     );
-        //   }
-        // });
+          if (value.sukses!) {
+            Navigator.pop(context);
+            scaffold.showSnackBar(
+              SnackBar(
+                content: Text(value.pesan!),
+              ),
+            );
+          } else {
+            scaffold.showSnackBar(
+              SnackBar(
+                content: Text(value.pesan!),
+              ),
+            );
+          }
+        });
       }
     }
   }

@@ -93,17 +93,17 @@ class KominfoNetwork {
     }
   }
 
-  // Future<ModelListBarang> deleteBarang(id) async {
-  //   final uri = Uri.parse(DeleteBarang);
-  //   final response = await http.post(uri, body: {'id': id});
-  //   if (response.statusCode == 200) {
-  //     ModelListBarang responseRequest =
-  //         ModelListBarang.fromJson(jsonDecode(response.body));
-  //     return responseRequest;
-  //   } else {
-  //     return null!;
-  //   }
-  // }
+  Future<ModelListBarang> deleteBarang(id) async {
+    final uri = Uri.parse(DeleteBarang);
+    final response = await http.post(uri, body: {'id': id});
+    if (response.statusCode == 200) {
+      ModelListBarang responseRequest =
+          ModelListBarang.fromJson(jsonDecode(response.body));
+      return responseRequest;
+    } else {
+      return null!;
+    }
+  }
 
   Future updateProduct(id, nama, harga, url, detail) async {
     // var stream = new http.ByteStream(DelegatingStream.typed(url.openRead()));
@@ -129,22 +129,22 @@ class KominfoNetwork {
     return response.reasonPhrase;
   }
 
-  // Future<ModelListBarang> updateBarangTanpaGambar(
-  //     id, nama, harga, gambar, detail) async {
-  //   final uri = Uri.parse(UpdateTanpaBarang);
-  //   final response = await http.post(uri, body: {
-  //     "id": id,
-  //     "nama": nama,
-  //     "harga": harga,
-  //     "gambar": gambar,
-  //     "detail": detail
-  //   });
-  //   if (response.statusCode == 200) {
-  //     ModelListBarang responseProduct =
-  //         ModelListBarang.fromJson(jsonDecode(response.body));
-  //     return responseProduct;
-  //   } else {
-  //     return null!;
-  //   }
-  // }
+  Future<ModelListBarang> updateBarangTanpaGambar(
+      id, nama, harga, gambar, detail) async {
+    final uri = Uri.parse(UpdateTanpaBarang);
+    final response = await http.post(uri, body: {
+      "id": id,
+      "nama": nama,
+      "harga": harga,
+      "gambar": gambar,
+      "detail": detail
+    });
+    if (response.statusCode == 200) {
+      ModelListBarang responseProduct =
+          ModelListBarang.fromJson(jsonDecode(response.body));
+      return responseProduct;
+    } else {
+      return null!;
+    }
+  }
 }

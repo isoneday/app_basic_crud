@@ -46,6 +46,8 @@ dependencies:
   file_picker: ^5.2.2
   sentry_flutter: ^6.16.1
   cached_network_image: ^3.2.2
+  firebase_messaging: ^14.1.2 
+  flutter_local_notifications: 
 
 dev_dependencies:
   flutter_test:

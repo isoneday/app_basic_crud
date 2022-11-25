@@ -27,24 +27,24 @@ class ProductDetailScreen extends StatelessWidget {
           IconButton(
               icon: Icon(Icons.delete),
               onPressed: () {
-                // product.deleteBarang(productID).then((value) {
-                //   final scaffold = ScaffoldMessenger.of(context);
+                product.deleteBarang(productID).then((value) {
+                  final scaffold = ScaffoldMessenger.of(context);
 
-                //   if (value.sukses == true) {
-                //     scaffold.showSnackBar(
-                //       SnackBar(
-                //         content: Text(value.pesan!),
-                //       ),
-                //     );
-                //     Navigator.pop(context);
-                //   } else {
-                //     scaffold.showSnackBar(
-                //       SnackBar(
-                //         content: Text("gagal menghapusp"),
-                //       ),
-                //     );
-                //   }
-                // });
+                  if (value.sukses == true) {
+                    scaffold.showSnackBar(
+                      SnackBar(
+                        content: Text(value.pesan!),
+                      ),
+                    );
+                    Navigator.pop(context);
+                  } else {
+                    scaffold.showSnackBar(
+                      SnackBar(
+                        content: Text("gagal menghapusp"),
+                      ),
+                    );
+                  }
+                });
               })
         ],
       ),
