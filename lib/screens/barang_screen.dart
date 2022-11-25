@@ -7,6 +7,7 @@ import '../model/model_listbarang.dart';
 import '../widgets/gridbarang.dart';
 
 class BarangScreen extends StatelessWidget {
+  static String id = "barang";
   BarangScreen({super.key});
   KominfoNetwork kominfoNetwork = KominfoNetwork();
   List<Barang>? barang;
@@ -78,8 +79,7 @@ class BarangScreen extends StatelessWidget {
           TextButton(
             onPressed: () {
               preferences.clear();
-              Navigator.pushReplacement(context,
-                  MaterialPageRoute(builder: (context) => LoginScreen()));
+              Navigator.pushReplacementNamed(context, LoginScreen.id);
             },
             child: new Text('Yes'),
           ),

@@ -8,6 +8,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../network/kominfo_network.dart';
 
 class LoginScreen extends StatefulWidget {
+  static String id = "login";
   const LoginScreen({super.key});
 
   @override
@@ -110,10 +111,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         padding: const EdgeInsets.only(top: 10),
                         child: GestureDetector(
                           onTap: (() {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => RegisterScreen()));
+                            Navigator.pushNamed(context, RegisterScreen.id);
                           }),
                           child: RichText(
                             text: TextSpan(
@@ -180,8 +178,7 @@ class _LoginScreenState extends State<LoginScreen> {
           SharedPreferences preferences = await SharedPreferences.getInstance();
           preferences.setBool("sesi", true);
           //untuk perpindahan halaman
-          Navigator.pushReplacement(
-              context, MaterialPageRoute(builder: (context) => BarangScreen()));
+          Navigator.pushReplacementNamed(context, BarangScreen.id);
         } else {
           setState(() {
             loading = false;

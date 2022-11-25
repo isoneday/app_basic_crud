@@ -8,6 +8,7 @@ import 'package:splash_screen_view/SplashScreenView.dart';
 
 //membuat halaman splash
 class SplashScreen extends StatelessWidget {
+  static String id = "splash";
   const SplashScreen({super.key});
 
   @override
@@ -47,11 +48,9 @@ class _SessionClassState extends State<SessionClass> {
     SharedPreferences preferences = await SharedPreferences.getInstance();
     bool login = preferences.getBool("sesi") ?? false;
     if (login) {
-      Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => BarangScreen()));
+      Navigator.pushReplacementNamed(context, BarangScreen.id);
     } else {
-      Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => LoginScreen()));
+      Navigator.pushReplacementNamed(context, LoginScreen.id);
     }
   }
 }

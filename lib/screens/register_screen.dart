@@ -4,6 +4,7 @@ import 'package:flutter_app/screens/login_screen.dart';
 import 'package:oktoast/oktoast.dart';
 
 class RegisterScreen extends StatefulWidget {
+  static String id = "regis";
   const RegisterScreen({super.key});
 
   @override
@@ -218,8 +219,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             textStyle: const TextStyle(fontSize: 18.0),
           );
           //untuk perpindahan halaman
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => LoginScreen()));
+          Navigator.pushNamed(context, LoginScreen.id);
         } else {
           setState(() {
             loading = false;

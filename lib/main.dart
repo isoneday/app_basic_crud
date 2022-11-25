@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/screens/barang_screen.dart';
 import 'package:flutter_app/screens/home_screen.dart';
+import 'package:flutter_app/screens/login_screen.dart';
+import 'package:flutter_app/screens/register_screen.dart';
 import 'package:flutter_app/screens/splash_screen.dart';
 import 'package:oktoast/oktoast.dart';
 
@@ -23,6 +26,14 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         home: SplashScreen(),
         debugShowCheckedModeBanner: false,
+        initialRoute: SplashScreen.id,
+        routes: {
+          SplashScreen.id: (context) => SplashScreen(),
+          BarangScreen.id: (context) => BarangScreen(),
+          LoginScreen.id: (context) => LoginScreen(),
+          RegisterScreen.id: (context) => RegisterScreen(),
+          HomeScreen.id: (context) => HomeScreen(),
+        },
       ),
     );
   }
