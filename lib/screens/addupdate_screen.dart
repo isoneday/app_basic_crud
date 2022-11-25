@@ -223,10 +223,10 @@ class _AddUpdateScreenState extends State<AddUpdateScreen> {
       print("test");
       _formKey.currentState?.save();
       if (widget.edit == true && images != null) {
-        // await listBarang
-        //     .updateProductProvider(_idBarang, _nmBarang?.text, _hrgBarang?.text,
-        //         images?.path, _detBarang?.text)
-        //     .then((value) => Navigator.pop(context));
+        await listBarang
+            .updateProductProvider(_idBarang, _nmBarang?.text, _hrgBarang?.text,
+                images?.path, _detBarang?.text)
+            .then((value) => Navigator.pop(context));
       } else if (widget.edit == false && images != null) {
         String res = await listBarang
             .insertBarangProvider(_nmBarang?.text, _hrgBarang?.text,

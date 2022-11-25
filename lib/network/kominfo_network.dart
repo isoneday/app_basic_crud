@@ -105,29 +105,29 @@ class KominfoNetwork {
   //   }
   // }
 
-  // Future updateProduct(id, nama, harga, url, detail) async {
-  //   // var stream = new http.ByteStream(DelegatingStream.typed(url.openRead()));
-  //   // var length = await url.length();
-  //   Uri uri = Uri.parse(UpdateBarang);
+  Future updateProduct(id, nama, harga, url, detail) async {
+    // var stream = new http.ByteStream(DelegatingStream.typed(url.openRead()));
+    // var length = await url.length();
+    Uri uri = Uri.parse(UpdateBarang);
 
-  //   // final uri =
-  //   //     Uri.http(_host, "server_inventory-master/index.php/api/updateBarang");
-  //   final request = new http.MultipartRequest("POST", uri);
+    // final uri =
+    //     Uri.http(_host, "server_inventory-master/index.php/api/updateBarang");
+    final request = new http.MultipartRequest("POST", uri);
 
-  //   request.fields['id'] = id;
-  //   request.fields['nama'] = nama;
-  //   request.fields['harga'] = harga;
-  //   request.fields['detail'] = detail;
+    request.fields['id'] = id;
+    request.fields['nama'] = nama;
+    request.fields['harga'] = harga;
+    request.fields['detail'] = detail;
 
-  //   var multipartFile = await http.MultipartFile.fromPath("gambar", url);
-  //   request.files.add(multipartFile);
-  //   var response = await request.send();
-  //   print(response.statusCode);
-  //   if (response.statusCode == 200) {
-  //     print("berhasil upload");
-  //   }
-  //   return response.reasonPhrase;
-  // }
+    var multipartFile = await http.MultipartFile.fromPath("gambar", url);
+    request.files.add(multipartFile);
+    var response = await request.send();
+    print(response.statusCode);
+    if (response.statusCode == 200) {
+      print("berhasil upload");
+    }
+    return response.reasonPhrase;
+  }
 
   // Future<ModelListBarang> updateBarangTanpaGambar(
   //     id, nama, harga, gambar, detail) async {

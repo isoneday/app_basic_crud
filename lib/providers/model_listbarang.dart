@@ -74,21 +74,21 @@ class ModelListBarang with ChangeNotifier {
   // }
 
   //update product
-  // Future updateProductProvider(id, nama, harga, url, detail) async {
-  //   final response = await network.updateProduct(id, nama, harga, url, detail);
-  //   // _responseRequest = response;
+  Future updateProductProvider(id, nama, harga, url, detail) async {
+    final response = await network.updateProduct(id, nama, harga, url, detail);
+    // _responseRequest = response;
 
-  //   var index = listBarang?.indexWhere((element) => element.barangId == id);
+    var index = listBarang?.indexWhere((element) => element.barangId == id);
 
-  //   listBarang?[index!] = Barang(
-  //       barangId: id,
-  //       barangNama: nama,
-  //       barangHarga: harga,
-  //       barangGambar: path.basename(url),
-  //       barangDetail: detail);
-  //   notifyListeners();
-  //   return response;
-  // }
+    listBarang?[index!] = Barang(
+        barangId: id,
+        barangNama: nama,
+        barangHarga: harga,
+        barangGambar: path.basename(url),
+        barangDetail: detail);
+    notifyListeners();
+    return response;
+  }
 
   // Future<ModelListBarang> updateProductTanpagmbar(
   //     id, nama, harga, gambar, detail) async {
@@ -108,23 +108,23 @@ class ModelListBarang with ChangeNotifier {
   //   return response;
   // }
 
-  // // search product
-  // List<Barang>? _listProductSearch;
+  // search product
+  List<Barang>? _listProductSearch;
 
-  // List<Barang>? get listProductSearch => _listProductSearch;
-  // void searchProduct(String keyword) {
-  //   List<Barang> listSearch = [];
-  //   if (keyword.isEmpty) {
-  //     listSearch.clear();
-  //     _listProductSearch = listSearch;
-  //   } else {
-  //     barang?.forEach((element) {
-  //       if (element.barangNama!.toLowerCase().contains(keyword)) {
-  //         listSearch.add(element);
-  //       }
-  //     });
-  //     _listProductSearch = listSearch;
-  //   }
-  //   notifyListeners();
-  // }
+  List<Barang>? get listProductSearch => _listProductSearch;
+  void searchProduct(String keyword) {
+    List<Barang> listSearch = [];
+    if (keyword.isEmpty) {
+      listSearch.clear();
+      _listProductSearch = listSearch;
+    } else {
+      barang?.forEach((element) {
+        if (element.barangNama!.toLowerCase().contains(keyword)) {
+          listSearch.add(element);
+        }
+      });
+      _listProductSearch = listSearch;
+    }
+    notifyListeners();
+  }
 }
