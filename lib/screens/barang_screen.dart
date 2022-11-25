@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/network/kominfo_network.dart';
 import 'package:flutter_app/screens/login_screen.dart';
+import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../argument/data_argument.dart';
 import '../model/model_listbarang.dart';
+import '../providers/barang.dart';
+import '../providers/model_listbarang.dart';
 import '../widgets/gridbarang.dart';
+import 'addupdate_screen.dart';
 
 class BarangScreen extends StatelessWidget {
   static String id = "barang";
@@ -49,16 +54,28 @@ class BarangScreen extends StatelessWidget {
                 icon: Icon(Icons.close)),
           ],
         ),
-        body: FutureBuilder(
-          future: getData(),
-          builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.waiting) {
-              return Center(
-                child: CircularProgressIndicator(),
-              );
-            }
-            return GridBarang(barangTerima: barang);
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.pushNamed(context, AddUpdateScreen.id,
+                arguments: DataArgument(null, false));
           },
+          child: Icon(Icons.add),
+        ),
+        body: RefreshIndicator(
+          onRefresh: () =>
+              Provider.of<ModelListBarang>(context, listen: false).getBarang(),
+          child: FutureBuilder(
+            future: Provider.of<ModelListBarang>(context, listen: false)
+                .getBarang(),
+            builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.waiting) {
+                return Center(
+                  child: CircularProgressIndicator(),
+                );
+              }
+              return GridBarang();
+            },
+          ),
         ),
       ),
     );
@@ -88,8 +105,8 @@ class BarangScreen extends StatelessWidget {
     );
   }
 
-  Future<List<Barang>?> getData() async {
-    barang = await kominfoNetwork.getListBarang();
-    return barang;
-  }
+  // Future<List<Barang>?> getData() async {
+  //   barang = await kominfoNetwork.getListBarang();
+  //   return barang;
+  // }
 }

@@ -40,6 +40,12 @@ dependencies:
   splash_screen_view: ^3.0.0
   http: ^0.13.5
   shared_preferences: ^2.0.15
+  provider: ^6.0.4
+  image_picker: ^0.8.6
+  permission_handler: ^10.2.0
+  file_picker: ^5.2.2
+  sentry_flutter: ^6.16.1
+  cached_network_image: ^3.2.2
 
 dev_dependencies:
   flutter_test:

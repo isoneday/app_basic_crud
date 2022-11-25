@@ -5,6 +5,12 @@ import 'package:flutter_app/screens/login_screen.dart';
 import 'package:flutter_app/screens/register_screen.dart';
 import 'package:flutter_app/screens/splash_screen.dart';
 import 'package:oktoast/oktoast.dart';
+import 'package:provider/provider.dart';
+
+import 'argument/data_argument.dart';
+import 'providers/model_listbarang.dart';
+import 'screens/addupdate_screen.dart';
+import 'screens/barang_detailscreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,18 +28,51 @@ class MyApp extends StatelessWidget {
       animationCurve: Curves.easeIn,
       animationDuration: const Duration(milliseconds: 500),
       duration: const Duration(milliseconds: 2000),
-      child: MaterialApp(
-        title: 'Flutter Demo',
-        home: SplashScreen(),
-        debugShowCheckedModeBanner: false,
-        initialRoute: SplashScreen.id,
-        routes: {
-          SplashScreen.id: (context) => SplashScreen(),
-          BarangScreen.id: (context) => BarangScreen(),
-          LoginScreen.id: (context) => LoginScreen(),
-          RegisterScreen.id: (context) => RegisterScreen(),
-          HomeScreen.id: (context) => HomeScreen(),
-        },
+      child: MultiProvider(
+        providers: [
+          ChangeNotifierProvider(create: (context) => ModelListBarang()),
+          // ChangeNotifierProvider(
+          //   create: (context) => CartProvider(),
+          // ),
+          // ChangeNotifierProvider(
+          //   create: (context) => OrderProvider(),
+          // ),
+          // ChangeNotifierProvider(
+          //   create: (context) => AuthProvider(),
+          // ),
+        ],
+        child: MaterialApp(
+          title: 'Flutter Demo',
+          debugShowCheckedModeBanner: false,
+          initialRoute: SplashScreen.id,
+          onGenerateRoute: (RouteSettings? settings) {
+            if (settings?.name == AddUpdateScreen.id) {
+              final argument = settings?.arguments as DataArgument;
+
+              return MaterialPageRoute(builder: (ctx) {
+                return AddUpdateScreen(
+                  barang: argument.barang,
+                  edit: argument.edit,
+                );
+              });
+            }
+             else if (settings?.name == ProductDetailScreen.id) {
+              final value = settings?.arguments as String;
+              return MaterialPageRoute(builder: (context) {
+                return ProductDetailScreen(
+                  productID: value,
+                );
+              });
+            }
+          },
+          routes: {
+            SplashScreen.id: (context) => SplashScreen(),
+            BarangScreen.id: (context) => BarangScreen(),
+            LoginScreen.id: (context) => LoginScreen(),
+            RegisterScreen.id: (context) => RegisterScreen(),
+            HomeScreen.id: (context) => HomeScreen(),
+          },
+        ),
       ),
     );
   }
